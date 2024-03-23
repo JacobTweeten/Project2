@@ -7,5 +7,12 @@ class GiphyCLI:
 
     def trending(self, count=5):
         gifs = self.api.get_trending_gifs(count)
+        #print(f"Gifs is {len(gifs)} long, {gifs}")
+        return gifs
+    
+
+    def search(self, query, count=5):
+        gifs = self.api.get_search_results(count, query)
+        # print(f"Gifs is {len(gifs)} long, {gifs}")
         return gifs
 
