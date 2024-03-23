@@ -24,9 +24,24 @@ def trending(count):
         print(f"{x+1}) {gif_url}")
 
 @gif.command()
-def search():
-    print("search subcommand called!")
+@click.option('--count', default=5, help='Number of search results to retrieve')
+@click.argument('query', required=False, type=str)
+def search(count, query):
+    if query is None: #Could not find a better way to check for a query with click, so I use this statement
+        print("Please provide a search query.")
+        return
 
+    #print("search subcommand called!")
+    gifs = giphy_cli.search(count, query)
+    
+    if gifs is None:
+        print("No GIFs found for the provided query.")
+        return
+
+    for x in range(count):
+        gif = gifs[x]
+        gif_url = f"{gif['title']} ({gif['bitly_gif_url']})"
+        print(f"{x+1}) {gif_url}")
 
 if __name__ == "__main__":
     gif()
