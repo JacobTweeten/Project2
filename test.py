@@ -6,7 +6,7 @@ from giphy_cli import GiphyCLI
 
 class testing(unittest.TestCase):
     def setUp(self):
-        self.api_key = "gtTp4Z8gedifHYvlsv2V5ciQWO08jO3s"
+        self.api_key = "enterapikeyheretotest"
         self.cli = GiphyCLI(self.api_key)
 
     # Testing Trending functionality

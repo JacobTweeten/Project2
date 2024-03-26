@@ -1,5 +1,3 @@
-# GIPHY_API_KEY=gtTp4Z8gedifHYvlsv2V5ciQWO08jO3s poetry run python gif.py trending --count 3
-
 import os
 
 import click
